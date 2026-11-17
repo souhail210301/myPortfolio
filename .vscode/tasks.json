@@ -1,0 +1,62 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"isBackground": false
+		},
+		{
+			"label": "Start dev server",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true
+		},
+		{
+			"label": "Open preview URL",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"Write-Output 'Waiting for Vite to report the dev server URL...'; $pattern='Local:\\s+(http://\\S+)'; Get-Content -Path .\\node_modules\\.vite\\deopt.log -Wait -ErrorAction SilentlyContinue | Out-Null\"",
+			"isBackground": false
+		},
+		{
+			"label": "Build project",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Rebuild after CV handling change",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false
+		},
+		{
+			"label": "Rebuild after CV handling change",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false
+		},
+		{
+			"label": "Preview build",
+			"type": "shell",
+			"command": "npm run preview",
+			"isBackground": true
+		},
+		{
+			"label": "Build after contact updates",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false
+		},
+		{
+			"label": "Build enhanced portfolio",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false
+		}
+	]
+}
